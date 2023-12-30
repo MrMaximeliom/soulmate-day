@@ -17,8 +17,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   color: #fff;
-  width: 100vw;
-  height: 100vh;
+
 }
 
 .timer {
@@ -64,6 +63,26 @@ section p:first-child,
 .timer div:last-child span {
   font-size: 3em;
 }
+
+/* 
+
+*/
+.carousel-container {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.carousel {
+
+  width: 40em;
+  margin: 0 auto;
+
+}
+
+.carousel img {
+  width: 40em;
+  height: 40em;
+}
+
 
 @media screen and (max-width:480px) {
   .timer div:last-child {

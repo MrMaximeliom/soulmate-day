@@ -1,6 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./App.css";
 import { CalendarMonth } from "@mui/icons-material";
+import ControlledCarousel from "./components/pics";
+import Fab from "@mui/material/Fab";
+import AddIcon from "@mui/icons-material/Add";
 const App = () => {
   const [timerDays, setTimerDays] = useState("00");
   const [timerHours, setTimerHours] = useState("00");
@@ -78,6 +81,12 @@ const App = () => {
           </section>
         </div>
       </section>
+      <div className="carousel-container">
+        <ControlledCarousel />
+        <Fab size="small" color="primary" aria-label="add">
+          <AddIcon />
+        </Fab>
+      </div>
     </section>
   );
 };
