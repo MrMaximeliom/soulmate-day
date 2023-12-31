@@ -3,12 +3,28 @@ import "./App.css";
 import { CalendarMonth } from "@mui/icons-material";
 import ControlledCarousel from "./components/pics";
 import Fab from "@mui/material/Fab";
-import AddIcon from "@mui/icons-material/Add";
+//import AddIcon from "@mui/icons-material/Add";
+import PauseCircleFilledIcon from "@mui/icons-material/PauseCircleFilled";
+import PlayCircleIcon from "@mui/icons-material/PlayCircle";
+
 const App = () => {
   const [timerDays, setTimerDays] = useState("00");
   const [timerHours, setTimerHours] = useState("00");
   const [timerMinutes, setTimerMinutes] = useState("00");
   const [timerSeconds, setTimerSeconds] = useState("00");
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const playAudio = () => {
+    const audio = document.getElementById("audio");
+    if (isPlaying) {
+      setIsPlaying(false);
+      audio.pause();
+    } else {
+      setIsPlaying(true);
+
+      audio.play();
+    }
+  };
 
   let interval = useRef();
 
@@ -46,6 +62,13 @@ const App = () => {
   return (
     <section className="timer-container">
       <section className="timer">
+        <audio id="audio" loop autoplay>
+          <source
+            src={process.env.PUBLIC_URL + "/music/maher.mp3"}
+            type="audio/mpeg"
+          />
+        </audio>
+
         <div>
           <CalendarMonth sx={{ fontSize: 50 }} />
           <h2>العد التنازلي لليوم الموعود</h2>
@@ -83,8 +106,8 @@ const App = () => {
       </section>
       <div className="carousel-container">
         <ControlledCarousel />
-        <Fab size="small" color="primary" aria-label="add">
-          <AddIcon />
+        <Fab size="small" color="primary" aria-label="add" onClick={playAudio}>
+          {isPlaying ? <PauseCircleFilledIcon /> : <PlayCircleIcon />}
         </Fab>
       </div>
     </section>

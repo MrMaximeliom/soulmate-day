@@ -12,21 +12,21 @@ export default function ControlledCarousel() {
   return (
     <Carousel activeIndex={index} onSelect={handleSelect} className="carousel">
       <Carousel.Item>
-        <Image src={process.env.PUBLIC_URL + "/pics/first.jpg"} rounded />
+        <Image src={process.env.PUBLIC_URL + "/pics/1.jpg"} rounded />
         <Carousel.Caption>
           <h3>First slide label</h3>
           <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <Image src={process.env.PUBLIC_URL + "/pics/second.jpg"} rounded />
+        <Image src={process.env.PUBLIC_URL + "/pics/2.jpg"} rounded />
         <Carousel.Caption>
           <h3>Second slide label</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <Image src={process.env.PUBLIC_URL + "/pics/third.jpg"} rounded />
+        <Image src={process.env.PUBLIC_URL + "/pics/3.jpg"} rounded />
         <Carousel.Caption>
           <h3>Third slide label</h3>
           <p>
