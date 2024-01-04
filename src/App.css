@@ -6,6 +6,10 @@
   padding: 0;
 }
 
+#root {
+  height: 100vh;
+}
+
 body {
   font-size: 100%;
   font-family: 'Noto Kufi Arabic', sans-serif;
@@ -17,6 +21,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   color: #fff;
+  height: 100vh;
 
 }
 
