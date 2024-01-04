@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/MrMaximeliom/soulmate-day/static/css/main.d859caea.css",
-    "main.js": "/MrMaximeliom/soulmate-day/static/js/main.865bdba0.js",
+    "main.js": "/MrMaximeliom/soulmate-day/static/js/main.62a46b97.js",
     "static/js/787.b94de604.chunk.js": "/MrMaximeliom/soulmate-day/static/js/787.b94de604.chunk.js",
     "static/media/wedding.jpg": "/MrMaximeliom/soulmate-day/static/media/wedding.79f1d484f4cfc98228e2.jpg",
     "index.html": "/MrMaximeliom/soulmate-day/index.html",
     "main.d859caea.css.map": "/MrMaximeliom/soulmate-day/static/css/main.d859caea.css.map",
-    "main.865bdba0.js.map": "/MrMaximeliom/soulmate-day/static/js/main.865bdba0.js.map",
+    "main.62a46b97.js.map": "/MrMaximeliom/soulmate-day/static/js/main.62a46b97.js.map",
     "787.b94de604.chunk.js.map": "/MrMaximeliom/soulmate-day/static/js/787.b94de604.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d859caea.css",
-    "static/js/main.865bdba0.js"
+    "static/js/main.62a46b97.js"
   ]
 }
