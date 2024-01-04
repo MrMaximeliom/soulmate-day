@@ -1,7 +1,7 @@
 {
   "name": "soulmate-day",
   "version": "0.1.0",
-  "homepage": "https://github.com/MrMaximeliom/soulmate-day",
+  "homepage": "https://mrmaximeliom.github.io/soulmate-day",
   "private": false,
   "dependencies": {
     "@emotion/react": "^11.11.3",
