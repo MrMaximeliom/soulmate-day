@@ -62,17 +62,18 @@ const App = () => {
   return (
     <section className="timer-container">
       <section className="timer">
-        <audio id="audio" loop autoplay>
+        {/* <audio id="audio" loop autoPlay>
           <source
             src={process.env.PUBLIC_URL + "/music/maher.mp3"}
             type="audio/mpeg"
           />
-        </audio>
+        </audio> */}
 
-        <div>
+        <div className="calendar-container">
           <CalendarMonth sx={{ fontSize: 50 }} />
           <h2>العد التنازلي لليوم الموعود</h2>
-          <p>العد التنازلي للزفاف الأسطوري للباشا محمد علي</p>
+          <p>إهداء إلى العريس: محمد علي</p>
+          <p>والعروس: الشيماء عبد الوهاب</p>
         </div>
         <div>
           <section>
@@ -104,12 +105,12 @@ const App = () => {
           </section>
         </div>
       </section>
-      <div className="carousel-container">
+      {/* <div className="carousel-container">
         <ControlledCarousel />
         <Fab size="small" color="primary" aria-label="add" onClick={playAudio}>
           {isPlaying ? <PauseCircleFilledIcon /> : <PlayCircleIcon />}
         </Fab>
-      </div>
+      </div> */}
     </section>
   );
 };
