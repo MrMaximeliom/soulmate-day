@@ -6,6 +6,7 @@ import Fab from "@mui/material/Fab";
 //import AddIcon from "@mui/icons-material/Add";
 import PauseCircleFilledIcon from "@mui/icons-material/PauseCircleFilled";
 import PlayCircleIcon from "@mui/icons-material/PlayCircle";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 
 const App = () => {
   const [timerDays, setTimerDays] = useState("00");
@@ -72,8 +73,15 @@ const App = () => {
         <div className="calendar-container">
           <CalendarMonth sx={{ fontSize: 50 }} />
           <h2>العد التنازلي لليوم الموعود</h2>
-          <p>إهداء إلى العريس: محمد علي</p>
-          <p>والعروس: الشيماء عبد الوهاب</p>
+          <p>
+            <FavoriteIcon /> إهداء إلى العريس: محمد علي
+          </p>
+          <p>
+            <FavoriteIcon /> والعروس: الشيماء عبد الوهاب
+          </p>
+          <p>
+            <FavoriteIcon /> بارك الله لهما وبارك عليهما وجمع بينهما في خير
+          </p>
         </div>
         <div>
           <section>
