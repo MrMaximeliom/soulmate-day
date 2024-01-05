@@ -2,18 +2,19 @@ import React, { useEffect, useRef, useState } from "react";
 import "./App.css";
 import { CalendarMonth } from "@mui/icons-material";
 import ControlledCarousel from "./components/pics";
-import Fab from "@mui/material/Fab";
+// import Fab from "@mui/material/Fab";
 //import AddIcon from "@mui/icons-material/Add";
-import PauseCircleFilledIcon from "@mui/icons-material/PauseCircleFilled";
-import PlayCircleIcon from "@mui/icons-material/PlayCircle";
+// import PauseCircleFilledIcon from "@mui/icons-material/PauseCircleFilled";
+// import PlayCircleIcon from "@mui/icons-material/PlayCircle";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-
+import Image from "react-bootstrap/Image";
 const App = () => {
   const [timerDays, setTimerDays] = useState("00");
   const [timerHours, setTimerHours] = useState("00");
   const [timerMinutes, setTimerMinutes] = useState("00");
   const [timerSeconds, setTimerSeconds] = useState("00");
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isTimerStopped, setIsTimerStoped] = useState(false);
 
   const playAudio = () => {
     const audio = document.getElementById("audio");
@@ -44,6 +45,7 @@ const App = () => {
       if (distance < 0) {
         // stop timer
         clearInterval(interval.current);
+        setIsTimerStoped(true);
       } else {
         // update timer
         setTimerDays(days);
@@ -72,7 +74,15 @@ const App = () => {
 
         <div className="calendar-container">
           <CalendarMonth sx={{ fontSize: 50 }} />
-          <h2>العد التنازلي لليوم الموعود</h2>
+          {isTimerStopped ? (
+            <h2>
+              <FavoriteIcon />
+              اليوم هو اليوم المبارك بإذن الله <FavoriteIcon />
+            </h2>
+          ) : (
+            <h2>العد التنازلي لليوم الموعود</h2>
+          )}
+
           <p>
             <FavoriteIcon /> إهداء إلى العريس: محمد علي
           </p>
@@ -83,35 +93,59 @@ const App = () => {
             <FavoriteIcon /> بارك الله لهما وبارك عليهما وجمع بينهما في خير
           </p>
         </div>
-        <div>
-          <section>
-            <p>{timerDays}</p>
-            <p>
-              <small>Days</small>
-            </p>
-          </section>
-          <span>:</span>
-          <section>
-            <p>{timerHours}</p>
-            <p>
-              <small>Hours</small>
-            </p>
-          </section>
-          <span>:</span>
-          <section>
-            <p>{timerMinutes}</p>
-            <p>
-              <small>Minutes</small>
-            </p>
-          </section>
-          <span>:</span>
-          <section>
-            <p>{timerSeconds}</p>
-            <p>
-              <small>Seconds</small>
-            </p>
-          </section>
-        </div>
+        {isTimerStopped ? (
+          <div>
+            <div className="timer-firework">
+              <div className="firework"></div>
+              <div className="firework"></div>
+              <div className="firework"></div>
+            </div>
+            <div className="qr-container">
+              <Image
+                src={process.env.PUBLIC_URL + "/pics/qr.png"}
+                rounded
+                className="hall-qr-location"
+              />
+              <br />
+              <br />
+              <h4>
+                <FavoriteIcon />
+                وتكتمل سعادتنا بحضوركم ليومنا المبارك
+                <FavoriteIcon />
+              </h4>
+            </div>
+          </div>
+        ) : (
+          <div className="timer-last-child">
+            <section>
+              <p>{timerDays}</p>
+              <p>
+                <small>Days</small>
+              </p>
+            </section>
+            <span>:</span>
+            <section>
+              <p>{timerHours}</p>
+              <p>
+                <small>Hours</small>
+              </p>
+            </section>
+            <span>:</span>
+            <section>
+              <p>{timerMinutes}</p>
+              <p>
+                <small>Minutes</small>
+              </p>
+            </section>
+            <span>:</span>
+            <section>
+              <p>{timerSeconds}</p>
+              <p>
+                <small>Seconds</small>
+              </p>
+            </section>
+          </div>
+        )}
       </section>
       {/* <div className="carousel-container">
         <ControlledCarousel />
